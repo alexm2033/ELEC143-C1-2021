@@ -11,28 +11,28 @@ int main()
     // ***** MODIFY THE CODE BELOW HERE *****
     leds = 0;
     //1. Use a while loop to wait for the blue button to be pressed, then released. For full marks, account for switch bounce.
-    while (leds == 0) {
+    while (leds == 0) {                 //leds == 0 condition is to allow the code to move on when run
 
-        while (BlueButton == 0) {}
+        while (BlueButton == 0) {}      //wait for button to be pressed
 
-        while (BlueButton == 1) {}
+        while (BlueButton == 1) {}      //wait for button to be released
 
-        wait_us(100000);
+        wait_us(100000);                //debounce delay
 
-        leds = leds = 1;
+        leds = 1;                       //visual confirmation of success
     }
-    wait_us(2000000);
+    wait_us(2000000);                   //separation between elements 
     leds = 0;
 
     //2. Using a while-loop, flash the yellow LED on and off 5 times. Each flash should last 0.5s. 
 
-    int count = 0;
+    int count = 0;                      //create and initialise variable
 
-    while ( count < 5 ) {
+    while ( count < 5 ) {               //set condition to enter loop
 
-        count = count + 1;
+        count = count + 1;              // increment count
 
-        leds = 2;
+        leds = 2;                       //flash led
 
         wait_us(500000);
 
@@ -40,48 +40,47 @@ int main()
 
     }
 
-    leds = 0;
     //3. Using a while-loop, flash the green LED on and off 10 times. Each flash should last 0.25s. 
-    count = 0;
+    count = 0;                          //reinitialise count variable
 
-    while ( count < 10){
+    while ( count < 10){                //set condition
 
-        count = count +  1; 
+        count = count +  1;             //increment
 
-        leds = 4;
+        leds = 4;                       //flash
 
         wait_us(250000);
 
         leds = 0;
     }
     
-    leds = 0;
     //4. Using a while-loop, flash the red LED on and off 20 times. Each flash should last 0.125s. 
-    count = 0;
-    while (count < 20) {
+    count = 0;                          //reinitialise
 
-        count = count + 1;
+    while (count < 20) {                //condition
 
-        leds = 1;
+        count = count + 1;              //increment
+
+        leds = 1;                       //flash
 
         wait_us(125000);
 
         leds = 0;
     }
     //5. Using a while-loop, count from 50 down to -50 in steps of 10 - print the results on row 1 of the LCD screen every 0.5 second 
-    short No = 50;
+    short No = 50;                      //declare and initialise variable                    
 
-    display.cls();
+    display.cls();                      //clear lcd display
 
-    while (No >= -50 ) {
+    while (No >= -50 ) {                //set conditions
 
-        display.locate(1, 7);
+        display.locate(1, 7);           //tell display where to put numbers
 
-        display.printf("%d", No);
+        display.printf("%d", No);       //print value of variable (No) on lcd
 
-        No = No - 10;
+        No = No - 10;                   //decrement variable
 
-        wait_us(500000);
+        wait_us(500000);                //interval
     }
     // ***** MODIFY THE CODE ABOVE HERE *****
 
