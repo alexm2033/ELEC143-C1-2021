@@ -15,6 +15,8 @@ int main()
 
         while (BlueButton == 0) {}      //wait for button to be pressed
 
+        wait_us(100000);
+
         while (BlueButton == 1) {}      //wait for button to be released
 
         wait_us(100000);                //debounce delay
@@ -34,9 +36,11 @@ int main()
 
         leds = 2;                       //flash led
 
-        wait_us(500000);
+        wait_us(500000);                //duration of flash
 
-        leds = 0;
+        leds = 0;                       //led off
+
+        wait_us(500000);                //off period
 
     }
 
@@ -49,9 +53,11 @@ int main()
 
         leds = 4;                       //flash
 
-        wait_us(250000);
+        wait_us(250000);                //duration of flash
 
-        leds = 0;
+        leds = 0;                       //led off
+
+        wait_us(250000);                //duration of off period
     }
     
     //4. Using a while-loop, flash the red LED on and off 20 times. Each flash should last 0.125s. 
@@ -63,9 +69,11 @@ int main()
 
         leds = 1;                       //flash
 
-        wait_us(125000);
+        wait_us(125000);                //duration of flash
 
-        leds = 0;
+        leds = 0;                       //led off
+
+        wait_us(125000);                //off period
     }
     //5. Using a while-loop, count from 50 down to -50 in steps of 10 - print the results on row 1 of the LCD screen every 0.5 second 
     short No = 50;                      //declare and initialise variable                    
