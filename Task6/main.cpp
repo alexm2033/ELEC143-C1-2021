@@ -39,8 +39,83 @@ int main()
         // For full marks, debounce the switches and use flow control structures and arrays to avoid deep nesting of code
 
         // ***** MODIFY THE CODE BELOW HERE *****
+      
 
         
+        int SW1_B = SW1;
+        int SW2_B = SW2; 
+        int SW3_B = SW3;
+        int SW4_B = SW4;
+        int SW5_B = SW5;
+        int SW1_C, SW2_C, SW3_C, SW4_C, SW5_C;
+        int count = 0;
+            
+        while (true) {
+            
+
+          //  SW1_C = SW1;
+           // SW3_C = SW3;
+           // SW4_C = SW4;
+           // SW5_C = SW5;
+
+            while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+
+            if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+
+                wait_us(250000);
+
+                if ((SW1 == 1) && (SW2 ==1)) {
+
+                    count = count + 1;
+                }
+                else count = 0;
+            
+            }
+
+                  while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+
+                 if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+
+                     if (SW5 == 1) {
+
+                         count = count + 1;
+                     }
+                     else count = 0;
+                 }
+                      while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+
+                     if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+
+                         if (SW4 == 1) {
+
+                             count = count +1;
+                         }
+                         else count = 0;
+                     }
+
+                          while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+
+                         if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+
+                             if ((SW2 == 1) && (SW3 == 1)) {
+
+                                 count = count + 1;
+                             }
+                             else count = 0;
+                         }
+
+                         
+
+                  if (count != 0){
+                    leds = 1;
+                    }
+                     else leds = 7;
+
+            wait_us(2000000);
+
+            leds = 0;
+            
+        }
 
         // ***** MODIFY THE CODE ABOVE HERE *****
     }
