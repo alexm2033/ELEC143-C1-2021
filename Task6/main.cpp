@@ -101,10 +101,11 @@ int main()
 
                 //check that count is correct it should be four                
                 if (count == 4){
-                    
-                    for (int n =0; n<3; n++) {                          //for loop to flash the green LED
+                       
+                    printf("congratulations successful entry\n");       //mission accomplished message 
 
-                        printf("congratulations successful entry");     //mission accomplished message
+                    for (int n =0; n<3; n++) {                          //for loop to flash the green LED
+                       
                         leds = 4;                                       //green LED on
                         wait_us(500000);                                //half second flash
                         leds = 0;                                       //LED off
