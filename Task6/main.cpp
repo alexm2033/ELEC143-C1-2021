@@ -54,7 +54,7 @@ int main()
         switches[2] = SW3;
         switches[3] = SW4;
         switches[4] = SW5;
-
+        void test_the_buttons();
         
             
         while (true) {
@@ -77,14 +77,14 @@ int main()
             
             }
             wait_us(1000000);
+            test_the_buttons();
+             //while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {}  
 
-             while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {}  
-
-            printf("press a button\n");
+           //printf("press a button\n");
                  
-            while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+           // while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
 
-            printf("button pressed\n");
+           // printf("button pressed\n");
 
                  if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
                     
@@ -174,4 +174,14 @@ int main()
     }
 }
 
+void test_the_buttons()
+{
+ while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {} 
+
+            printf("press a buttom\n");
+
+            while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+
+            printf("button pressed\n");
+}
 
