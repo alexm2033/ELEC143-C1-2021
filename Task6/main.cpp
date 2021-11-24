@@ -110,6 +110,7 @@ int main()
                         wait_us(500000);                        //half second delay
 
                     }
+                    break;
                 }
 
                 //if count has any value other than four
