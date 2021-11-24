@@ -72,7 +72,7 @@ int main()
                 if (((SW1 == 1) && (SW2 ==1)) && ((SW3 ==0) && (SW4 ==0) &&(SW5 ==0))) {
                     while  ((SW1 == 1) || (SW2 == 1)){}
                     wait_us(250000);               
-                    count = count + 20;
+                    count = count + 1;
                 }
             
             }
