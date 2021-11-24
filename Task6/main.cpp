@@ -63,9 +63,9 @@ int main()
 
         test_the_buttons();
 
-            if ((SW1 == 1) || (SW2 == 1) || (SW3 == 1) || (SW4 == 1) || (SW5 == 1)) {
+            //if ((SW1 == 1) || (SW2 == 1) || (SW3 == 1) || (SW4 == 1) || (SW5 == 1)) {
 
-                wait_us(100000);
+              //  wait_us(100000);
 
                 if (((SW1 == 1) && (SW2 ==1)) && ((SW3 ==0) && (SW4 ==0) &&(SW5 ==0))) {
                     while  ((SW1 == 1) || (SW2 == 1)){}
@@ -73,14 +73,14 @@ int main()
                     count = count + 1;
                 }
             
-            }
+           // }
             
             test_the_buttons();
            
 
-                 if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+                // if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
                     
-                    wait_us(100000);
+                   // wait_us(100000);
 
                      if ((SW5 ==1) && ((SW1 ==0) && (SW2 ==0) && (SW3 ==0) && (SW4 ==0))) {
 
@@ -88,13 +88,13 @@ int main()
                          wait_us(250000);
                          count = count + 1;
                      }
-                 }
+                // }
         
             test_the_buttons();
 
-                if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+               // if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
 
-                    wait_us(100000);
+                  //  wait_us(100000);
 
                     if ((SW4 ==1) && ((SW1 ==0) && (SW2 ==0) && (SW3 ==0) && (SW5 ==0))) {
 
@@ -102,13 +102,13 @@ int main()
                         wait_us(250000);
                         count = count +1;
                     }
-                }          
+               // }          
 
             test_the_buttons();
 
-                if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+               // if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
 
-                    wait_us(100000);
+                 //  wait_us(100000);
 
                      if (((SW2 == 1) && (SW3 ==1)) && ((SW1 == 0) && (SW4 == 0) && (SW5 == 0))) {
 
@@ -116,7 +116,7 @@ int main()
                          wait_us(250000);
                          count = count + 1;
                     }
-                }
+             //   }
 
                          
 
@@ -161,5 +161,12 @@ void test_the_buttons()
  while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
 
  printf("button pressed\n");
+
+  if ((SW1 == 1) || (SW2 == 1) || (SW3 == 1) || (SW4 == 1) || (SW5 == 1)) {
+
+      wait_us(100000);
+
+  }
+
 }
 
