@@ -47,7 +47,13 @@ int main()
         int SW3_B = SW3;
         int SW4_B = SW4;
         int SW5_B = SW5;
-        int SW1_C, SW2_C, SW3_C, SW4_C, SW5_C;
+        int switches[5];
+        switches[0] = SW1;
+        switches[1] = SW2;
+        switches[2] = SW3;
+        switches[3] = SW4;
+        switches[4] = SW5;
+
         int count = 0;
             
         while (true) {
@@ -58,13 +64,16 @@ int main()
            // SW4_C = SW4;
            // SW5_C = SW5;
 
-            while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+            while (switches == 0)
+                 {}
 
             if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
 
                 wait_us(250000);
 
                 if ((SW1 == 1) && (SW2 ==1)) {
+                    while ((SW1 == 1) || (SW2 == 1)){}
+                    wait_us(250000);
 
                     count = count + 1;
                 }
