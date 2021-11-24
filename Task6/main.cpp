@@ -1,4 +1,5 @@
 #include "uop_msb.h"
+#include <cstdio>
 using namespace uop_msb;
 
 
@@ -59,19 +60,16 @@ int main()
         while (true) {
             
 
-          //  SW1_C = SW1;
-           // SW3_C = SW3;
-           // SW4_C = SW4;
-           // SW5_C = SW5;
+         printf("press a button\n");
 
-            while (switches == 0) {}
-
+            while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {} //wait for a switch to be presed
+            printf("button pressed\n");
             if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
 
                 wait_us(250000);
 
-                if ((SW1 == 1) && (SW2 ==1)) {
-                    while ((SW1 == 1) || (SW2 == 1)){}
+                if ((SW2 ==1) && ((SW1 ==0) && (SW3 ==0) && (SW4 ==0) &&(SW5 ==0))) {
+                    while  (SW2 == 1){}
                     wait_us(250000);
 
                     count = count + 1;
