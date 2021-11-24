@@ -64,8 +64,7 @@ int main()
            // SW4_C = SW4;
            // SW5_C = SW5;
 
-            while (switches == 0)
-                 {}
+            while (switches == 0) {}
 
             if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
 
