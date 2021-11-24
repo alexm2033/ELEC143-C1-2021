@@ -68,7 +68,7 @@ int main()
 
                 wait_us(250000);
 
-                if ((SW2 ==1) && ((SW1 ==0) && (SW3 ==0) && (SW4 ==0) &&(SW5 ==0))) {
+                if (((SW1 == 1) && (SW2 ==1)) && ((SW3 ==0) && (SW4 ==0) &&(SW5 ==0))) {
                     while  (SW2 == 1){}
                     wait_us(250000);
                     leds = 1;
@@ -97,7 +97,7 @@ int main()
                      }
                      else count = 0;
                  }
-                    
+
             while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {} 
 
             printf("press a buttom\n");
