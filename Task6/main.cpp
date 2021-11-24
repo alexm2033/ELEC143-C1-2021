@@ -42,7 +42,7 @@ int main()
         // ***** MODIFY THE CODE BELOW HERE *****
       
 
-        
+        wait_us(2000000);
         int SW1_B = SW1;
         int SW2_B = SW2; 
         int SW3_B = SW3;
@@ -71,56 +71,109 @@ int main()
                 if ((SW2 ==1) && ((SW1 ==0) && (SW3 ==0) && (SW4 ==0) &&(SW5 ==0))) {
                     while  (SW2 == 1){}
                     wait_us(250000);
-
+                    leds = 1;
                     count = count + 1;
                 }
                 else count = 0;
             
             }
+             while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {}  
 
-                  while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
-
+            printf("press a button\n");
+                 
+            while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+            printf("button pressed\n");
                  if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+                    
+                    wait_us(250000);
 
-                     if (SW5 == 1) {
+                     if ((SW5 ==1) && ((SW1 ==0) && (SW2 ==0) && (SW3 ==0) && (SW4 ==0))) {
 
+                         while (SW5 == 1); {}
+
+                         wait_us(250000);
+                         leds = 2;
                          count = count + 1;
                      }
                      else count = 0;
                  }
-                      while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+                    
+            while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {} 
 
-                     if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+            printf("press a buttom\n");
 
-                         if (SW4 == 1) {
+            while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
 
-                             count = count +1;
-                         }
-                         else count = 0;
-                     }
+            printf("button pressed\n");
 
-                          while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+                if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
 
-                         if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+                    wait_us(250000);
 
-                             if ((SW2 == 1) && (SW3 == 1)) {
+                    if ((SW4 ==1) && ((SW1 ==0) && (SW2 ==0) && (SW3 ==0) && (SW5 ==0))) {
 
-                                 count = count + 1;
-                             }
-                             else count = 0;
-                         }
+                        while (SW4 == 1)
+
+                        wait_us(250000);
+                        leds = 3;
+                        count = count +1;
+                    }
+                    else count = 0;
+                }
+
+             while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {} 
+
+             printf("press a button\n");
+
+             while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+
+             printf("button pressed\n");
+
+                if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
+
+                    wait_us(250000);
+
+                     if (((SW2 == 1) && (SW3 == 1)) && ((SW1 == 0) && (SW4 == 0) && (SW5 == 0))) {
+
+                         while((SW2 == 1) && (SW3 == 1)) {}
+
+                         wait_us(250000);
+                         leds = 4;
+                         count = count + 1;
+                    }
+                     else count = 0;
+                }
 
                          
 
-                  if (count != 0){
-                    leds = 1;
-                    }
-                     else leds = 7;
+                if (count == 4){
+                    
+                    for (int n =0; n<3; n++) {
 
-            wait_us(2000000);
+                        leds = 4;
+                        wait_us(500000);
+                        leds = 0;
+                        wait_us(500000);
+
+                    }
+                }
+
+                else {
+
+                    leds = 1;
+                    alarm.playTone("A", Buzzer::HIGHER_OCTAVE);
+                    wait_us(5000000);
+                    alarm.rest();
+
+                }
+
+            
 
             leds = 0;
-            
+           
+
+            wait_us(10000000);
+
         }
 
         // ***** MODIFY THE CODE ABOVE HERE *****
