@@ -57,6 +57,8 @@ int main()
     traffic = traffic ^ 76;
     wait_us(1000000);
     traffic = traffic ^ 72;
+    wait_us(1000000);
+    traffic = traffic ^ 8;
     
     
 
