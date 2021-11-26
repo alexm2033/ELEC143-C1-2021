@@ -30,10 +30,19 @@ AnalogIn ldr(AN_LDR_PIN);
 //LCD Backlight
 DigitalOut backLight(LCD_BKL_PIN);
 
+void displayArray(int rows, int cols, double *Array)
+{
+    for (unsigned row=0; row<rows; row++) {
+        for (unsigned col=0; col<cols; col++) {
+            printf("%8.1f\t", Array[(row*cols)+col]);
+        }
+        printf("\n");
+    }
+}
 int main()
 {
 
-    / 4x4 Array
+    // 4x4 Array
 double M[4][3] = {
     {1.0, 2.0, 3.0},
     {-3.0, -4.0, -5.0},
@@ -47,15 +56,7 @@ double N[3][4] = {
     {10.0, 11.0, 12.0, 13.0}
 };
 
-void displayArray(int rows, int cols, double *Array)
-{
-    for (unsigned row=0; row<rows; row++) {
-        for (unsigned col=0; col<cols; col++) {
-            printf("%8.1f\t", Array[(row*cols)+col]);
-        }
-        printf("\n");
-    }
-}
+
 
 // ***** For (1) WRITE YOUR ARRAY Y HERE *****
 double Y[4][4] = {0};
@@ -73,7 +74,7 @@ printf("i'm working\n");
     // ***** MODIFY THE CODE BELOW HERE *****
 int a, b, c, d, e, x, tempn[3], tempm[3], tempe[3];
     // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see comments above)
-        for (a=0; a<1;) {
+        for (a=0; a<1;)  {
             for (b=0; b<3; b++){
                 tempm[b] = M[a][b];
             }
