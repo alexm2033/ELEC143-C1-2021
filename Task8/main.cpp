@@ -41,7 +41,12 @@ printf("i'm working\n");
     // ***** MODIFY THE CODE BELOW HERE *****
 int a, b, c, d, e, x, tempn[3], tempm[3], tempe[3];
     // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see comments above)
-        for (a=0; a<1;) {
+       double* addressOfArrayy = (double*)Y;
+       displayArray(4,4,(double*)Y);
+       printf("but why\n");
+    while (true) {
+    
+           for (a=0; a<1;) {
             for (b=0; b<3; b++){
                 tempm[b] = M[a][b];
             }
@@ -56,7 +61,11 @@ int a, b, c, d, e, x, tempn[3], tempm[3], tempe[3];
                     tempe[e] = tempm[e] * tempn[e];
                 }
                     Y[0][0] += tempe[e];
-                    printf("%f\n", Y[0][0]);
+
+                     double* addressOfArrayx = (double*)Y;
+                    displayArray(4,4,(double*)Y);
+
+    }
     // 2. Write a nested loop to perform a matrix multiplication M*N and store the result in Y
 
     // 3. Write a function to multiply two matrices together (see comments above). Include some text code to demonstrate it working
