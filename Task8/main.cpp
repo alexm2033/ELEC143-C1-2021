@@ -27,7 +27,8 @@ void displayArray(int rows, int cols, double *Array)
 
 // ***** For (1) WRITE YOUR ARRAY Y HERE *****
 double Y[4][4] = {0};
-printf("i'm working\n", Y);
+
+
 // ***** For (3) WRITE YOUR FUNCTION HERE *****
 
 // *****  END YOUR FUNCTION HERE  *****
@@ -36,7 +37,7 @@ int main()
 {
     double* addressOfArray = (double*)M;    //Obtain base address of the array M
     displayArray(4,3,(double*)M);           //Display in terminal
-
+printf("i'm working\n");
     // ***** MODIFY THE CODE BELOW HERE *****
 int a, b, c, d, e, x, tempn[3], tempm[3], tempe[3];
     // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see comments above)
