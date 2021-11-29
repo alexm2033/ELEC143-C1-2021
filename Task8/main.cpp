@@ -1,4 +1,5 @@
 #include "uop_msb.h"
+#include <cstdio>
 using namespace uop_msb;
 
 // 4x4 Array
@@ -30,7 +31,47 @@ double Y[4][4] = {0};
 
 
 // ***** For (3) WRITE YOUR FUNCTION HERE *****
+int function(){
+void multiply_2_matrices();
+ int Row, row, Col, col, x, y, z, i, j;
+    double matrixA[10][10], matrixB[10][10], products[3];
+    double result[10][10];
+    printf("enter rows in matrix A\n");
+    scanf("%d", &Row);
+    printf("enter columns in matrix A\n");
+    scanf("%d", &Col);
+    printf("enter rows in matrix B\n");
+    scanf("%d", &row);
+    printf("enter columns in matrix B\n");
+    scanf("%d", &col);
+    printf("matrix A has %d rows,and %d columns\n", Row, Col);
+    printf("matrix B has %d rows, and %d columns\n", row, col);
+    if( Col == row) {
+        i = Row;
+        j = col;
+    }
+    else {
+        printf("ERROR incompatible matrices\n");
+        printf("please try again");
+    }
 
+    //fill matrix A
+        for (x = 0; x < Row; x++) {
+             for (y = 0; y < Col; y++) {
+
+                 printf("enter value\n");
+                 scanf("%d", &matrixA[x][y]);
+             }            
+        }
+
+        for (x = 0; x < row; x++) {
+            for (y = 0; y < col; y++) {
+
+                printf("enter value\n");
+                scanf("%d", &matrixB[x][y]);
+            }
+        }
+}
 // *****  END YOUR FUNCTION HERE  *****
 
 int main()
@@ -39,35 +80,68 @@ int main()
     displayArray(4,3,(double*)M);           //Display in terminal
 printf("i'm working\n");
     // ***** MODIFY THE CODE BELOW HERE *****
-int a, b, c, d, e, x, tempn[3], tempm[3], tempe[3];
+    int Row, row, Col, col, x, y, z, i, j;
+    double matrixA[10][10], matrixB[10][10], products[3];
+    double result[10][10];
+    printf("enter rows in matrix A\n");
+    scanf("%d", &Row);
+    printf("enter columns in matrix A\n");
+    scanf("%d", &Col);
+    printf("enter rows in matrix B\n");
+    scanf("%d", &row);
+    printf("enter columns in matrix B\n");
+    scanf("%d", &col);
+    printf("matrix A has %d rows,and %d columns\n", Row, Col);
+    printf("matrix B has %d rows, and %d columns\n", row, col);
+    if( Col == row) {
+        i = Row;
+        j = col;
+    }
+    else {
+        printf("ERROR incompatible matrices\n");
+        printf("please try again");
+    }
+
+    //fill matrix A
+        for (x = 0; x < Row; x++) {
+             for (y = 0; y < Col; y++) {
+
+                 printf("enter value\n");
+                 scanf("%d", &matrixA[x][y]);
+             }            
+        }
+
+        for (x = 0; x < row; x++) {
+            for (y = 0; y < col; y++) {
+
+                printf("enter value\n");
+                scanf("%d", &matrixB[x][y]);
+            }
+        }
+
+    int a, b, c, product[3];
     // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see comments above)
        double* addressOfArrayy = (double*)Y;
        displayArray(4,4,(double*)Y);
        printf("but why\n");
-    while (true) {
     
-           for (a=0; a<1;) {
-            for (b=0; b<3; b++){
-                tempm[b] = M[a][b];
+        for (a = 0; a < 4; a++) {
+
+            for (b = 0; b < 4; b ++){
+
+                for (c = 0; c < 3; c++) {
+
+                    product[c] = M[a][c] * N[c][b];
+
+                    Y[a][b] += product[c];
+
+                }
             }
         }
-            for ( c = 0; c<3; c++) {
-                for (d = 0; d<1; ) {
-                    tempn[c] = N[c][d];
-                }
-            }
+         displayArray(4,4,(double*)Y);
 
-                for ( e = 0; e<3; e++) {
-                    tempe[e] = tempm[e] * tempn[e];
-                }
-                    Y[0][0] += tempe[e];
-
-                     double* addressOfArrayx = (double*)Y;
-                    displayArray(4,4,(double*)Y);
-
-    }
     // 2. Write a nested loop to perform a matrix multiplication M*N and store the result in Y
-
+   
     // 3. Write a function to multiply two matrices together (see comments above). Include some text code to demonstrate it working
 
     // ***** MODIFY THE CODE ABOVE HERE *****
