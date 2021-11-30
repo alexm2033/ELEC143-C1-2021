@@ -106,7 +106,7 @@ int main()
     player.playTone("A", Buzzer::MIDDLE_OCTAVE);
     wait_us(QUAVER*1000);
     player.rest();
-
+printf("%s",notes[0]);
 
     while (true)
     {   
