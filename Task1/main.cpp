@@ -10,13 +10,10 @@ int main()
 
     // 1. Write a for-loop to count from 0 to 100 in steps of 10 - print the results to the serial terminal
 
-    //define variable
-    int n;
-
     //set up for loop with initial value (0), condition for continuation (n is less than or equal to 100), and increment (+10 per loop)
-    for (n=0; n<=100; n = n+10) {
+    for (int n=0; n<=100; n = n+10) {
 
-        //toggle red led
+        //toggle red led using bitwise xor 
         leds = leds^1;
 
         //print value of n to serial monitor
@@ -28,11 +25,8 @@ int main()
 
     // 2. Write a for-loop to count from 100 down to 10 in steps of 5 - print the results to the serial terminal
     
-    //define variable
-    int m;
-
     //set up for loop
-    for( m=100; m>=10; m = m-5) {
+    for(int m=100; m>=10; m = m-5) {
 
         //toggle yellow led
         leds = leds^2;
@@ -50,13 +44,13 @@ int main()
     int x;
 
     //set conditions for for loop
-    for (n=0; n<=100; n = n+10) {
+    for (int n=0; n<=100; n = n+10) {
 
         //toggle red led
         leds = leds^4;
 
             //set conditions for nested for loop
-            for(m=100; m>=0; m = m-10) {
+            for(int m=100; m>=0; m = m-10) {
 
                 //toggle yellow led
                 leds = leds^2;
@@ -83,8 +77,10 @@ int main()
                  wait_ns(500000000);
 
              }
-        //wait 1 second
-        wait_us(1000000);
+
+    //wait 1 second
+    wait_us(1000000);
+    
     }
     // ***** MODIFY THE CODE ABOVE HERE *****
     leds = 7;
