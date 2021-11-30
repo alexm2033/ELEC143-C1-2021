@@ -83,25 +83,28 @@ printf("i'm working\n");
     int Row, row, Col, col, x, y, z, i, j;
     double matrixA[10][10], matrixB[10][10], products[3];
     double result[10][10];
-    printf("enter rows in matrix A\n");
-    scanf("%d", &Row);
-    printf("enter columns in matrix A\n");
-    scanf("%d", &Col);
-    printf("enter rows in matrix B\n");
-    scanf("%d", &row);
-    printf("enter columns in matrix B\n");
-    scanf("%d", &col);
-    printf("matrix A has %d rows,and %d columns\n", Row, Col);
-    printf("matrix B has %d rows, and %d columns\n", row, col);
-    if( Col == row) {
-        i = Row;
-        j = col;
-    }
-    else {
-        printf("ERROR incompatible matrices\n");
-        printf("please try again");
-    }
+    while (true) {
+         printf("enter rows in matrix A\n");
+         scanf("%d", &Row);
+          printf("enter columns in matrix A\n");
+          scanf("%d", &Col);
+          printf("enter rows in matrix B\n");
+          scanf("%d", &row);
+           printf("enter columns in matrix B\n");
+          scanf("%d", &col);
+           printf("matrix A has %d rows,and %d columns\n", Row, Col);
+           printf("matrix B has %d rows, and %d columns\n", row, col);
+          if( Col == row) {
+              i = Row;
+             j = col;
 
+             break
+           }
+          else {
+              printf("ERROR incompatible matrices\n");
+              printf("please try again");
+            }
+    }
     //fill matrix A
         for (x = 0; x < Row; x++) {
              for (y = 0; y < Col; y++) {
