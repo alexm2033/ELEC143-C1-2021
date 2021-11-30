@@ -31,47 +31,7 @@ double Y[4][4] = {0};
 
 
 // ***** For (3) WRITE YOUR FUNCTION HERE *****
-int function(){
-void multiply_2_matrices();
- int Row, row, Col, col, x, y, z, i, j;
-    double matrixA[10][10], matrixB[10][10], products[3];
-    double result[10][10];
-    printf("enter rows in matrix A\n");
-    scanf("%d", &Row);
-    printf("enter columns in matrix A\n");
-    scanf("%d", &Col);
-    printf("enter rows in matrix B\n");
-    scanf("%d", &row);
-    printf("enter columns in matrix B\n");
-    scanf("%d", &col);
-    printf("matrix A has %d rows,and %d columns\n", Row, Col);
-    printf("matrix B has %d rows, and %d columns\n", row, col);
-    if( Col == row) {
-        i = Row;
-        j = col;
-    }
-    else {
-        printf("ERROR incompatible matrices\n");
-        printf("please try again");
-    }
 
-    //fill matrix A
-        for (x = 0; x < Row; x++) {
-             for (y = 0; y < Col; y++) {
-
-                 printf("enter value\n");
-                 scanf("%d", &matrixA[x][y]);
-             }            
-        }
-
-        for (x = 0; x < row; x++) {
-            for (y = 0; y < col; y++) {
-
-                printf("enter value\n");
-                scanf("%d", &matrixB[x][y]);
-            }
-        }
-}
 // *****  END YOUR FUNCTION HERE  *****
 
 int main()
@@ -80,7 +40,7 @@ int main()
     displayArray(4,3,(double*)M);           //Display in terminal
 printf("i'm working\n");
     // ***** MODIFY THE CODE BELOW HERE *****
-    int Row, row, Col, col, x, y, z, i, j;
+    int Row, row, Col, col, x, y, z;// i, j, k; 
     double matrixA[10][10], matrixB[10][10], products[3];
     double result[10][10];
     while (true) {
@@ -95,39 +55,61 @@ printf("i'm working\n");
            printf("matrix A has %d rows,and %d columns\n", Row, Col);
            printf("matrix B has %d rows, and %d columns\n", row, col);
           if( Col == row) {
-              i = Row;
-             j = col;
-
-             break
+             break;
            }
           else {
               printf("ERROR incompatible matrices\n");
-              printf("please try again");
+              printf("please try again\n");
             }
     }
     //fill matrix A
         for (x = 0; x < Row; x++) {
              for (y = 0; y < Col; y++) {
-
-                 printf("enter value\n");
-                 scanf("%d", &matrixA[x][y]);
+                printf("enter matrix A\n");
+                 printf("enter value for %d%d\n", x,y);
+                 scanf("%lf", &matrixA[x][y]);
              }            
         }
 
         for (x = 0; x < row; x++) {
             for (y = 0; y < col; y++) {
-
-                printf("enter value\n");
-                scanf("%d", &matrixB[x][y]);
+                printf("enter matrix B\n");
+                printf("enter value for %d%d\n", x,y);
+                scanf("%lf", &matrixB[x][y]);
             }
         }
 
-    int a, b, c, product[3];
+            for ( int i=0; i < Row; i++) {
+                for ( int j=0; j < col; j++) {
+                    for ( int k=0; k < row; k++) {
+
+                        products[k] = matrixA[i][k] * matrixB[k][j];
+
+                        result[i][j] += products[k];
+
+                        printf("%lf x %lf = %lf\n", matrixA[i][k], matrixB[k][j], products[k]);
+                        printf("sum of row %d x column %d = %lf", i, k, result[i][j]);
+                        wait_us(500000);
+                    }
+                }
+            }
+
+            for ( int i=0; i < Row; i++) {
+                for (int j=0; j < col; j++) {
+                    if( i>0) {printf("\n");}
+
+                    printf("%8.2lf", result[i][j]);
+                }
+            } 
+
+
+
+   
     // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see comments above)
        double* addressOfArrayy = (double*)Y;
        displayArray(4,4,(double*)Y);
        printf("but why\n");
-    
+       int a, b, c, product[3];
         for (a = 0; a < 4; a++) {
 
             for (b = 0; b < 4; b ++){
