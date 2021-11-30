@@ -106,7 +106,11 @@ int main()
     player.playTone("A", Buzzer::MIDDLE_OCTAVE);
     wait_us(QUAVER*1000);
     player.rest();
-printf("%s",notes[0]);
+    wait_us(1000000);
+
+   // player.playTone(notes[9].note, notes[9].octave);
+   // wait_us(notes[9].time_ms*1000);
+  //  player.rest();
 
     while (true)
     {   
@@ -114,7 +118,18 @@ printf("%s",notes[0]);
         while (SW1==0);
 
         // ***** MODIFY THE CODE BELOW HERE *****
-
+        //for loop to play the "tune" twice
+        for (int x=0; x <2; x++) {
+            //for loop to cycle through the array of notes
+            for (int n=0; n < 52; n++) {
+                 //instruct the buzzer which note to play in which octave
+                 player.playTone(notes[n].note, notes[n].octave);
+                 //instruct buzzer how long to play the note for including conversion from ms to us
+                 wait_us(notes[n].time_ms*1000);
+                 player.rest();
+                 
+            }
+        } 
         // 1. Write a loop to play the tune in the array `notes`
         //    You may recognise the tune :)
         //    Use player.playTone followed by a player.rest() to get the right duration of note as shown above
