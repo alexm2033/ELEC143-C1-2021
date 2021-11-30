@@ -1,5 +1,4 @@
 #include "uop_msb.h"
-#include <cstdio>
 using namespace uop_msb;
 
 // 4x4 Array
@@ -27,22 +26,14 @@ void displayArray(int rows, int cols, double *Array)
 }
 
 // ***** For (1) WRITE YOUR ARRAY Y HERE *****
-double Y[4][4] = {0};
-
+double Y[4][4] = {{0}};
 
 // ***** For (3) WRITE YOUR FUNCTION HERE *****
-
-// *****  END YOUR FUNCTION HERE  *****
-
-int main()
+void multiply2Matrices()
 {
-    double* addressOfArray = (double*)M;    //Obtain base address of the array M
-    displayArray(4,3,(double*)M);           //Display in terminal
-printf("i'm working\n");
-    // ***** MODIFY THE CODE BELOW HERE *****
-    int Row, row, Col, col, x, y, z;// i, j, k; 
-    double matrixA[10][10], matrixB[10][10], products[3];
-    double result[10][10];
+    int Row, row, Col, col, x, y;
+    double matrixA[10][10] {{0}}, matrixB[10][10] {{0}}, products[3] {0};
+    double result[10][10] {{0}};
     while (true) {
          printf("enter rows in matrix A\n");
          scanf("%d", &Row);
@@ -87,28 +78,37 @@ printf("i'm working\n");
 
                         result[i][j] += products[k];
 
-                        printf("%lf x %lf = %lf\n", matrixA[i][k], matrixB[k][j], products[k]);
-                        printf("sum of row %d x column %d = %lf", i, k, result[i][j]);
+                        printf("%.2lf x %.2lf = %.2lf\n", matrixA[i][k], matrixB[k][j], products[k]);
+                        wait_us(500000);
+                        printf("sum of row %d x column %d = %.2lf\n", i, k, result[i][j]);
                         wait_us(500000);
                     }
                 }
             }
 
             for ( int i=0; i < Row; i++) {
+                 if( i>0) {printf("\n");}
                 for (int j=0; j < col; j++) {
-                    if( i>0) {printf("\n");}
+                   
 
-                    printf("%8.2lf", result[i][j]);
+                    printf("%8.1lf\t", result[i][j]);
                 }
-            } 
+            }
+            printf("\n"); 
+}   
+// *****  END YOUR FUNCTION HERE  *****
 
+int main()
+{
+    double* addressOfArray = (double*)M;    //Obtain base address of the array M
+    displayArray(4,3,(double*)M);           //Display in terminal
 
-
-   
-    // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see comments above)
-       double* addressOfArrayy = (double*)Y;
-       displayArray(4,4,(double*)Y);
-       printf("but why\n");
+    // ***** MODIFY THE CODE BELOW HERE *****
+       // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see comments above)
+       //double* addressOfArrayy = (double*)Y;
+      // displayArray(4,4,(double*)Y);
+       printf("\n");
+       // 2. Write a nested loop to perform a matrix multiplication M*N and store the result in Y
        int a, b, c, product[3];
         for (a = 0; a < 4; a++) {
 
@@ -125,7 +125,9 @@ printf("i'm working\n");
         }
          displayArray(4,4,(double*)Y);
 
-    // 2. Write a nested loop to perform a matrix multiplication M*N and store the result in Y
+         multiply2Matrices();
+
+    
    
     // 3. Write a function to multiply two matrices together (see comments above). Include some text code to demonstrate it working
 
