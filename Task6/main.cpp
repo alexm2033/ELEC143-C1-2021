@@ -48,12 +48,17 @@ int main()
         int SW3_B = SW3;
         int SW4_B = SW4;
         int SW5_B = SW5;
-        int switches[5];
-        switches[0] = SW1;
-        switches[1] = SW2;
-        switches[2] = SW3;
-        switches[3] = SW4;
-        switches[4] = SW5;
+        int switchespressed[5];
+        int switches1[5] = {1,1,0,0,0};
+        int switches2[5] = {0,0,0,0,1};
+        int switches3[5] = {0,0,0,1,0};
+        int switches4[5] = {0,1,1,0,0};
+        
+        switchespressed[0] = SW1_B;
+        switchespressed[1] = SW2_B;
+        switchespressed[2] = SW3_B;
+        switchespressed[3] = SW4_B;
+        switchespressed[4] = SW5_B;
 
         
             
