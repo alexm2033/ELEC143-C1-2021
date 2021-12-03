@@ -43,25 +43,7 @@ int main()
       
 
         wait_us(2000000);
-        int SW1_B = SW1;
-        int SW2_B = SW2; 
-        int SW3_B = SW3;
-        int SW4_B = SW4;
-        int SW5_B = SW5;
-        int switchespressed[5];
-        int switches1[5] = {1,1,0,0,0};
-        int switches2[5] = {0,0,0,0,1};
-        int switches3[5] = {0,0,0,1,0};
-        int switches4[5] = {0,1,1,0,0};
-        
-        switchespressed[0] = SW1_B;
-        switchespressed[1] = SW2_B;
-        switchespressed[2] = SW3_B;
-        switchespressed[3] = SW4_B;
-        switchespressed[4] = SW5_B;
-
-        
-            
+       
         while (true) {
 
         int count = 0;    
@@ -174,9 +156,42 @@ int main()
            
             wait_us(2000000);
         }
+    }
+}
+ int SW1_B = SW1;
+        int SW2_B = SW2; 
+        int SW3_B = SW3;
+        int SW4_B = SW4;
+        int SW5_B = SW5;
+        int switchespressed[5];
+        int switches1[5] = {1,1,0,0,0};
+        int switches2[5] = {0,0,0,0,1};
+        int switches3[5] = {0,0,0,1,0};
+        int switches4[5] = {0,1,1,0,0};
+void check_the_switches() 
+{
+     wait_us(1000000);
+     while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {} 
+
+    while (true){
+         switchespressed[0] = SW1_B;
+         switchespressed[1] = SW2_B;
+         switchespressed[2] = SW3_B;
+         switchespressed[3] = SW4_B;
+         switchespressed[4] = SW5_B;  
+            for (int n=0; n<5; n++){
+                if(switchespressed[n] != 0){
+                    break;
+                }
+            }
+    }
+    for(int n=0; n<5; n++) {
+        printf("%d\n",switchespressed[n]);
+    }   
+
 
         // ***** MODIFY THE CODE ABOVE HERE *****
     }
 }
 
-
+ 
