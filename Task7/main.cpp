@@ -127,10 +127,8 @@ int main()
             //for loop to cycle through the array notes
             for (int n=0; n < 52; n++) {
                 //check for rests in the array of notes
-                //if(strcmp (notes[n].note, "-") == 0)
-                if (notes[n].note == "-")
-                 {
-                    //if a rest is identified buzzer is instructed to rest
+                if(strcmp (notes[n].note, "-") == 0) {
+                    //if strcmp returns a 0 then the 2 are equal a rest is identified and the buzzer is instructed to rest
                     player.rest();
                 }
                 else {
