@@ -1,4 +1,5 @@
 #include "uop_msb.h"
+#include <cstring>
 using namespace uop_msb;
 
 // You are to use these ojects to read the switch inputs
@@ -111,7 +112,7 @@ int main()
    // player.playTone(notes[9].note, notes[9].octave);
    // wait_us(notes[9].time_ms*1000);
   //  player.rest();
-
+        
     while (true)
     {   
         //Wait for the blue button
@@ -119,12 +120,21 @@ int main()
 
         // ***** MODIFY THE CODE BELOW HERE *****
         
+  
+
         //for loop to play the "tune" twice
         for (int x=0; x <2; x++) {
-            //for loop to cycle through the array of notes
+            //for loop to cycle through the array notes
             for (int n=0; n < 52; n++) {
+                //check for rests in the array of notes
+                if(strcmp (notes[n].note, "-") == 0) {
+                    //if a rest is identified buzzer is instructed to rest
+                    player.rest();
+                }
+                else {
                  //instruct the buzzer which note to play in which octave
                  player.playTone(notes[n].note, notes[n].octave);
+                }
                  //instruct buzzer how long to play the note for including conversion from ms to us
                  wait_us(notes[n].time_ms*1000);
                  player.rest();
