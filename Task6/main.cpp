@@ -42,12 +42,8 @@ int main()
         // ***** MODIFY THE CODE BELOW HERE *****
       
 
-        wait_us(2000000);
-        int SW1_B = SW1;
-        int SW2_B = SW2; 
-        int SW3_B = SW3;
-        int SW4_B = SW4;
-        int SW5_B = SW5;
+       
+        
         int switches[5];
         switches[0] = SW1;
         switches[1] = SW2;
@@ -55,123 +51,116 @@ int main()
         switches[3] = SW4;
         switches[4] = SW5;
 
+        //declare function "test the switch"
+        void test_the_switch();
         
             
         while (true) {
 
         int count = 0;    
 
-         printf("press a button\n");
+             test_the_switch();
 
-            while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {} //wait for a switch to be presed
-            printf("button pressed\n");
-            if ((SW1 == 1) || (SW2 == 1) || (SW3 == 1) || (SW4 == 1) || (SW5 == 1)) {
-
-                wait_us(100000);
-
+                //check that only switch's 1 & 2 have been pressed
                 if (((SW1 == 1) && (SW2 ==1)) && ((SW3 ==0) && (SW4 ==0) &&(SW5 ==0))) {
-                    while  ((SW1 == 1) || (SW2 == 1)){}
-                    wait_us(250000);               
-                    count = count + 1;
+
+                     while ((SW1 == 1) || (SW2 == 1)) {}        //wait for both to be released
+                     wait_us(100000);                           //debounce
+                     count = count + 1;                         //increment count
                 }
             
-            }
-            wait_us(1000000);
+            test_the_switch();
 
-             while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {}  
+                //check that only switch 5 has been pressed
+                if ((SW5 ==1) && ((SW1 ==0) && (SW2 ==0) && (SW3 ==0) && (SW4 ==0))) {
 
-            printf("press a button\n");
-                 
-            while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+                     while (SW5 == 1) {}                        //wait for switch to be released
+                     wait_us(100000);                           //debounce
+                     count = count + 1;                         //increment count
+                  }
+        
+            test_the_switch();
 
-            printf("button pressed\n");
+                //check that only switch 4 has been pressed
+                if ((SW4 ==1) && ((SW1 ==0) && (SW2 ==0) && (SW3 ==0) && (SW5 ==0))) {
 
-                 if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
-                    
-                    wait_us(100000);
+                     while (SW4 == 1) {}                       //wait for switch to be released
+                     wait_us(100000);                          //debounce
+                     count = count +1;                         //increment count
+                }         
 
-                     if ((SW5 ==1) && ((SW1 ==0) && (SW2 ==0) && (SW3 ==0) && (SW4 ==0))) {
+            test_the_switch();
 
-                         while (SW5 == 1); {}
-                         wait_us(250000);
-                         count = count + 1;
-                     }
-                 }
+                //check that only switches 2 & 3 have been pressed
+                if (((SW2 == 1) && (SW3 ==1)) && ((SW1 == 0) && (SW4 == 0) && (SW5 == 0))) {
 
-            wait_us(1000000);
-
-            while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {} 
-
-            printf("press a buttom\n");
-
-            while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
-
-            printf("button pressed\n");
-
-                if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
-
-                    wait_us(100000);
-
-                    if ((SW4 ==1) && ((SW1 ==0) && (SW2 ==0) && (SW3 ==0) && (SW5 ==0))) {
-
-                        while (SW4 == 1){}
-                        wait_us(250000);
-                        count = count +1;
-                    }
+                     while ((SW2 == 1) || (SW3 == 1)) {}        //wait for both switch's to be released  
+                     wait_us(100000);                           //debounce
+                     count = count + 1;                         //increment count
                 }
 
-            wait_us(1000000);
-
-             while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {} 
-
-             printf("press a button\n");
-
-             while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
-
-             printf("button pressed\n");
-
-                if ((SW1 ==1) || (SW2 ==1) || (SW3 ==1) ||(SW4 ==1) || (SW5 ==1)) {
-
-                    wait_us(100000);
-
-                     if (((SW2 == 1) && (SW3 ==1)) && ((SW1 == 0) && (SW4 == 0) && (SW5 == 0))) {
-
-                         while ((SW2 == 1) || (SW3 == 1)) {}
-                         wait_us(250000);
-                         count = count + 1;
-                    }
-                }
-
-                         
-
+                //check that count is correct it should be four                
                 if (count == 4){
-                    
-                    for (int n =0; n<3; n++) {
+                       
+                    printf("congratulations successful entry\n");       //mission accomplished message 
 
-                        leds = 4;
-                        wait_us(500000);
-                        leds = 0;
-                        wait_us(500000);
+                    for (int n =0; n<3; n++) {                          //for loop to flash the green LED
+                       
+                        leds = 4;                                       //green LED on
+                        wait_us(500000);                                //half second flash
+                        leds = 0;                                       //LED off
+                        wait_us(500000);                                //half second delay
 
                     }
+                    break;
                 }
 
+                //if count has any value other than four
                 else {
 
-                    leds = 1;
-                    alarm.playTone("A", Buzzer::HIGHER_OCTAVE);
-                    wait_us(5000000);
-                    alarm.rest();
+                    printf("incorrect combination entered\n");          //inform user of error
+                    leds = 1;                                           //red LED on
+                    alarm.playTone("A", Buzzer::HIGHER_OCTAVE);         //play warning tone
+                    wait_us(5000000);                                   //for 5 seconds
+                    alarm.rest();                                       //buzzer off
+                    leds = 0;                                           //LED off
 
                 }
 
-            leds = 0;
-           
-            wait_us(2000000);
         }
-
-        // ***** MODIFY THE CODE ABOVE HERE *****
     }
 }
+
+//create function to test the switch state and wait for a press
+void test_the_switch()
+{
+ //1 second delay to clear switch's between steps
+ wait_us(1000000);
+
+ //ensure all switches are released
+ while ((SW1 != 0) && (SW2 != 0) && (SW3 != 0) && (SW4 != 0) && (SW5 != 0)) {} 
+
+ //ask user to press a button
+ printf("please press a button\n");
+
+ //wait for a button to be pressed
+ while ((SW1 == 0) && (SW2 == 0) && (SW3 == 0) && (SW4 == 0) && (SW5 == 0)) {}
+
+ //confirm reciept of input
+ printf("thankyou\n");
+
+ //has a switch been pressed
+ if ((SW1 == 1) || (SW2 == 1) || (SW3 == 1) || (SW4 == 1) || (SW5 == 1)) {
+
+      wait_us(100000);          //debounce the switch
+
+  }
+
+}
+
+        // ***** MODIFY THE CODE ABOVE HERE *****
+    
+
+
 
 
