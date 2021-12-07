@@ -118,6 +118,7 @@ int main()
         while (SW1==0);
 
         // ***** MODIFY THE CODE BELOW HERE *****
+        
         //for loop to play the "tune" twice
         for (int x=0; x <2; x++) {
             //for loop to cycle through the array of notes
