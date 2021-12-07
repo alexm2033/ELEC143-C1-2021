@@ -73,8 +73,8 @@ int main()
                  //print result x
                  printf("n multiplyed by m = %d\n", x);
 
-                 //wait 1/2 second (many nano seconds)
-                 wait_ns(500000000);
+                 //wait 1/2 second 
+                 wait_ns(500000);
 
              }
 

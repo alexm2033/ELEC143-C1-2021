@@ -21,30 +21,32 @@ int main()
         sw11 = sw1;         //read switch 1
     } while (sw11 == 0);    //wait for it to be pressed
     
-    wait_us(50000);         //debounce
+    wait_us(100000);         //debounce
 
     do {
         sw11 = sw1;         //read 
     } while (sw11 == 1);    //wait
 
-    wait_us(50000);         //debounce
+    wait_us(100000);         //debounce
 
     leds = 7;               //leds lit to show its worked
+
 
     // 2. Wait for sw2 to be pressed and released
     do {
         sw22 = sw2;         //read switch 2
     } while(sw22 == 0);     //wait
 
-    wait_us(50000);         //debounce
+    wait_us(100000);         //debounce
 
     do {
         sw22 = sw2;         //read
     } while (sw22 == 1);    //wait (again)
 
-    wait_us(50000);         //debounce (you will tell me if this is getting repetitive wont you)
+    wait_us(100000);         //debounce (you will tell me if this is getting repetitive wont you)
 
     leds = 0;               //turn off leds to show its time to move on
+
 
     // 3. Wait for sw1 and sw2 to be pressed (together)
     do {
@@ -52,9 +54,10 @@ int main()
         sw22 = sw2;         //read
     } while ((sw11 == 0) || (sw22 == 0));   //wait
 
-    wait_us(50000);         //(have a guess, oh go on, you'll never get it) debounce
+    wait_us(100000);         // debounce
 
     leds = 7;               // leds to test
+
 
     // 4. Wait for either sw1 or sw2 to be released
     do {
@@ -62,7 +65,10 @@ int main()
         sw22 = sw2;         //read
     }while((sw11 == 1) && (sw22 == 1));     //wait for it
 
-    wait_us(50000);         //debounce (I meant to ask earlier. you don't suffer from motion sickness do you?)
+    wait_us(100000);         //debounce 
+
+    leds = 0;       //leds off
+
 
     // 5. Turn on only the yellow and green LEDs
 
@@ -71,6 +77,7 @@ int main()
     // 6. Wait for 1s
 
     wait_us(1000000);
+
 
     // 7. Turn on only the red LEDs
 

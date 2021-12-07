@@ -60,7 +60,8 @@ int main()
         int count = 0;    
 
              test_the_switch();
-
+                //code will move on even if the wrong buttons are pressed, incorrect entry will only be confirmed when sequence is complete
+                
                 //check that only switch's 1 & 2 have been pressed
                 if (((SW1 == 1) && (SW2 ==1)) && ((SW3 ==0) && (SW4 ==0) &&(SW5 ==0))) {
 

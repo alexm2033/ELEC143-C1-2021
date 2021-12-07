@@ -11,7 +11,7 @@ int main()
     // ***** MODIFY THE CODE BELOW HERE *****
     leds = 0;
     //1. Use a while loop to wait for the blue button to be pressed, then released. For full marks, account for switch bounce.
-    while (leds == 0) {                 //leds == 0 condition is to allow the code to move on when run
+    while (leds == 0) {                 //leds == 0 condition is to allow the code to move on to the next part of the task when run
 
         while (BlueButton == 0) {}      //wait for button to be pressed
 
@@ -76,17 +76,17 @@ int main()
         wait_us(125000);                //off period
     }
     //5. Using a while-loop, count from 50 down to -50 in steps of 10 - print the results on row 1 of the LCD screen every 0.5 second 
-    short No = 50;                      //declare and initialise variable                    
+    short Num = 50;                      //declare and initialise variable                    
 
     display.cls();                      //clear lcd display
 
-    while (No >= -50 ) {                //set conditions
+    while (Num >= -50 ) {                //set entry conditions
 
         display.locate(1, 7);           //tell display where to put numbers
 
-        display.printf("%d", No);       //print value of variable (No) on lcd
+        display.printf("%d", Num);       //print value of variable (Num) on lcd
 
-        No = No - 10;                   //decrement variable
+        Num = Num - 10;                   //decrement variable
 
         wait_us(500000);                //interval
     }
