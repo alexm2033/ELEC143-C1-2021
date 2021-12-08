@@ -97,11 +97,12 @@ void multiply2Matrices()
 
                 //multiply row elemnts of A with column elements of B, and write results to array "products"
                 products[k] = matrixA[i][k] * matrixB[k][j];
-               
-                if (k == rowB - 1) {
-                    // sum array "products" and write into the correct element of matrix array "result"
-                    result[i][j] += products[k];
 
+                // sum array "products" and write into the correct element of matrix array "result"
+                result[i][j] += products[k];
+              
+                if (k == rowB - 1) {
+                  
                     //print value of result element, delay is to improve readability for demonstration
                     printf("sum of row %d x column %d = %.2lf\n", i, j, result[i][j]);
                     wait_us(100000);
@@ -155,11 +156,9 @@ int main()
                 //multiply row of matrix M with column of matrix N and write result to array "product"
                 product[c] = M[a][c] * N[c][b];
 
-                if (c == 2) {
-
-                   //sum array and write result into specifyed element of array "Y"
-                   Y[a][b] += product[c];
-                }
+                //sum array and write result into specifyed element of array "Y"
+                Y[a][b] += product[c];
+                
             }
         }
     }
