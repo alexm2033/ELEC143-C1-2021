@@ -118,17 +118,19 @@ void multiply2Matrices()
     //nested loops to print array "result"
     for ( int i=0; i < RowA; i++) {        
         if( i>0) {
-
             //print new line for every row
             printf("\n");
         }
-            for (int j=0; j < colB; j++) {
-            
-                printf("%8.1lf\t", result[i][j]);
-            }
-    }
+        for (int j=0; j < colB; j++) {
+        
+            printf("%8.1lf\t", result[i][j]);
+        }
 
+    }
+    
+    //clear some space for general readability on multiple passes
     printf("\n"); 
+    printf("\n");
 } 
 
 
@@ -164,6 +166,8 @@ int main()
         }
     //use supplied function to display result matrix Y
     displayArray(4,4,(double*)Y);
+
+    printf("\n");
     
     //run function to demonstrate it works
     multiply2Matrices();
