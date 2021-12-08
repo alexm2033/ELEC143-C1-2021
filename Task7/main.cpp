@@ -123,7 +123,7 @@ int main()
   
 
         //for loop to play the "tune" twice
-        for (int x=0; x <2; x++) {
+        for (int x=0; x < 2; x++) {
             //for loop to cycle through the array notes
             for (int n=0; n < 52; n++) {
                 //check for rests in the array of notes
@@ -131,11 +131,13 @@ int main()
                     //if strcmp returns a 0 then the 2 are equal a rest is identified and the buzzer is instructed to rest
                     player.rest();
                 }
+
                 else {
                  //instruct the buzzer which note to play in which octave
                  player.playTone(notes[n].note, notes[n].octave);
                 }
-                 //instruct buzzer how long to play the note for including conversion from ms to us
+                
+                 //instruct buzzer how long to play the note or rest for including conversion from ms to us
                  wait_us(notes[n].time_ms*1000);
                  player.rest();
                  
