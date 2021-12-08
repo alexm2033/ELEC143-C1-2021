@@ -113,9 +113,12 @@ void multiply2Matrices()
         }
     }
 
+    printf("\n");
+    
     //nested loops to print array "result"
     for ( int i=0; i < RowA; i++) {        
         if( i>0) {
+
             //print new line for every row
             printf("\n");
         }
@@ -124,8 +127,7 @@ void multiply2Matrices()
                 printf("%8.1lf\t", result[i][j]);
             }
     }
-    
-    //empty line for general readability of multiple runs
+
     printf("\n"); 
 } 
 
