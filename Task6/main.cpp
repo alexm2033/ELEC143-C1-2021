@@ -159,7 +159,7 @@ wait_us(250000);
 
  //confirm reciept of input
  printf("thankyou\n");
-    wait_us(250000);
+    wait_us(50000);
      if (SW1 == 1) {buttons_pressed[0] = 1;}
      if (SW2 == 1) {buttons_pressed[1] = 2;}
      if (SW3 == 1) {buttons_pressed[2] = 4;}
