@@ -55,7 +55,7 @@ int main()
 
         //declare function "test the switch"
        // void test_the_switch();
-       extern int test_the_buttons(int);
+        extern int test_the_buttons(int);
         //buttons = test_the_buttons();
         
             
@@ -141,6 +141,7 @@ int main()
         }
     }
 }
+
 // int test_the_buttons()
 // {
 // //create function to test the switch state and wait for a press
@@ -178,6 +179,7 @@ int main()
 //  wait_us(250000); 
 
 //      printf("buttons = %d\n", buttons);
+
      
 //     return buttons;
      
