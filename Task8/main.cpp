@@ -26,6 +26,7 @@ void displayArray(int rows, int cols, double *Array)
 }
 
 // ***** For (1) WRITE YOUR ARRAY Y HERE *****
+
 //declare and initialise array Y of required size to hold result of M x N
 double Y[4][4] = {{0}};
 
