@@ -25,7 +25,7 @@ int test_the_buttons()
 
  //ensure all switches are released
  while ((SW1 != 0) || (SW2 != 0) || (SW3 != 0) || (SW4 != 0) || (SW5 != 0)) {} 
-wait_us(250000);
+wait_us(50000);
  
 //solicit input from user
  printf("please press a button\n");
@@ -33,7 +33,7 @@ wait_us(250000);
 
  //confirm reciept of input
  printf("thankyou\n");
-    wait_us(250000);
+    wait_us(50000);
      if (SW1 == 1) {buttons_pressed[0] = 1;}
      if (SW2 == 1) {buttons_pressed[1] = 2;}
      if (SW3 == 1) {buttons_pressed[2] = 4;}

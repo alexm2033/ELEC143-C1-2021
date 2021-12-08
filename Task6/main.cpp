@@ -3,7 +3,7 @@
 #include <cstdio>
 #include <functional>
 using namespace uop_msb;
-
+ 
 
 // You are to use these ojects to read the switch inputs
 DigitalIn SW1(USER_BUTTON);
@@ -55,7 +55,7 @@ int main()
 
         //declare function "test the switch"
        // void test_the_switch();
-        extern int test_the_buttons(int);
+      extern int test_the_buttons();
         //buttons = test_the_buttons();
         
             
@@ -64,7 +64,7 @@ int main()
         int count = 0;    
 
              //test_the_buttons();
-             buttons = test_the_buttons(0);
+             buttons = test_the_buttons();
                 //code will move on even if the wrong buttons are pressed, incorrect entry will only be confirmed when sequence is complete
               //printf("buttons = %d\n", buttons);  
                 //check that only switch's 1 & 2 have been pressed
@@ -79,7 +79,7 @@ int main()
 
                 //check that only switch 5 has been pressed
                // if ((SW5 ==1) && ((SW1 ==0) && (SW2 ==0) && (SW3 ==0) && (SW4 ==0))) {
-                    buttons = test_the_buttons(0);
+                    buttons = test_the_buttons();
                    if (buttons == 16){
                     // while (SW5 == 1) {}                        //wait for switch to be released
                     // wait_us(100000);                           //debounce
@@ -90,7 +90,7 @@ int main()
 
                 //check that only switch 4 has been pressed
                // if ((SW4 ==1) && ((SW1 ==0) && (SW2 ==0) && (SW3 ==0) && (SW5 ==0))) {
-                   buttons = test_the_buttons(0);
+                   buttons = test_the_buttons();
                     if (buttons == 8){
                     // while (SW4 == 1) {}                       //wait for switch to be released
                     // wait_us(100000);                          //debounce
@@ -101,9 +101,7 @@ int main()
 
                 //check that only switches 2 & 3 have been pressed
                // if (((SW2 == 1) && (SW3 ==1)) && ((SW1 == 0) && (SW4 == 0) && (SW5 == 0))) {
-                   buttons = test_the_buttons(0
-                   
-                   );
+                   buttons = test_the_buttons();
                 if (buttons == 6){
                     // while ((SW2 == 1) || (SW3 == 1)) {}        //wait for both switch's to be released  
                     // wait_us(100000);                           //debounce
