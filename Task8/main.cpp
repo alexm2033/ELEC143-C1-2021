@@ -106,7 +106,7 @@ void multiply2Matrices()
                 if (k == rowB - 1){
 
                     //print value of result element
-                    printf("sum of row %d x column %d = %.2lf\n", i, k, result[i][j]);
+                    printf("sum of row %d x column %d = %.2lf\n", i, j, result[i][j]);
                     wait_us(250000);
                 }
             }
