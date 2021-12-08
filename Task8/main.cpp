@@ -97,17 +97,14 @@ void multiply2Matrices()
 
                 //multiply row elemnts of A with column elements of B, and write results to array "products"
                 products[k] = matrixA[i][k] * matrixB[k][j];
+               
+                if (k == rowB - 1) {
+                    // sum array "products" and write into the correct element of matrix array "result"
+                    result[i][j] += products[k];
 
-                //write the sum of array "products" into the correct element of matrix array "result"
-                result[i][j] += products[k];
-
-                //print arithmetic operations to determine progress, delay is to improve readability (but a large matrix takes a long time)
-                //the following code block could be removed for use as a general function
-                if (k == rowB - 1){
-
-                    //print value of result element
+                    //print value of result element, delay is to improve readability for demonstration
                     printf("sum of row %d x column %d = %.2lf\n", i, j, result[i][j]);
-                    wait_us(250000);
+                    wait_us(100000);
                 }
             }
         }
@@ -143,27 +140,29 @@ int main()
     displayArray(4,3,(double*)M);           //Display in terminal
 
     // ***** MODIFY THE CODE BELOW HERE *****
-       // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see comments above)
+     
       
-       printf("\n");
-       // 2. Write a nested loop to perform a matrix multiplication M*N and store the result in Y
-       //delcare variables, int used for array "product" as only whole numbers are present
-       int a, b, c, product[3];
+    printf("\n");
+    
+    //delcare and initilase array
+    double product[3];
 
-        //nested loops to cycle through matrix elements
-        for (a = 0; a < 4; a++) {
-            for (b = 0; b < 4; b ++){
-                for (c = 0; c < 3; c++) {
+    //nested loops to cycle through matrix elements
+    for (int a = 0; a < 4; a++) {
+        for (int b = 0; b < 4; b ++){
+            for (int c = 0; c < 3; c++) {
 
-                    //multiply row of matrix M with column of matrix N and write result to array "product"
-                    product[c] = M[a][c] * N[c][b];
+                //multiply row of matrix M with column of matrix N and write result to array "product"
+                product[c] = M[a][c] * N[c][b];
 
-                    //sum array and write result into specifyed element of array "Y"
-                    Y[a][b] += product[c];
+                if (c == 2) {
 
+                   //sum array and write result into specifyed element of array "Y"
+                   Y[a][b] += product[c];
                 }
             }
         }
+    }
     //use supplied function to display result matrix Y
     displayArray(4,4,(double*)Y);
 
@@ -172,8 +171,8 @@ int main()
     //run function to demonstrate it works
     multiply2Matrices();
 
-    
-   
+    // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see comments above)
+     // 2. Write a nested loop to perform a matrix multiplication M*N and store the result in Y   
     // 3. Write a function to multiply two matrices together (see comments above). Include some text code to demonstrate it working
 
     // ***** MODIFY THE CODE ABOVE HERE *****
