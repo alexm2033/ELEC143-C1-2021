@@ -139,7 +139,7 @@ int main()
         }
     }
 }
-int test_the_buttons()
+int test_the_buttons(int)
 {
 //create function to test the switch state and wait for a press
 //int  test_the_switch()
