@@ -147,7 +147,7 @@ int main()
     printf("\n");
     
     //delcare and initilase array
-    double product[3];
+    double product[3] {0};
 
     //nested loops to cycle through matrix elements
     for (int a = 0; a < 4; a++) {
