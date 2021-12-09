@@ -43,8 +43,8 @@ int main()
         sw22 = sw2;         //read
     } while (sw22 == 1);    //wait (again)
 
-    wait_us(100000);         //debounce (you will tell me if this is getting repetitive wont you)
-
+    wait_us(100000);         //debounce
+    
     leds = 0;               //turn off leds to show its time to move on
 
 
